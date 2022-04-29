@@ -36,7 +36,7 @@ const SearchHeader = ({ search, count }) => {
 const ListItem = ({ slug, title, description, date, tags }) => {
   return (
     <>
-      <Link to={{ pathname: `/blog/${encodeURI(slug)}` }} state={{ fromList: true }}>
+      <Link to={{ pathname: `/blog/${slug}` }} state={{ fromList: true }}>
         <h2 className="font-bold font-sans break-normal text-gray-900 pb-2 text-xl md:text-2xl">
           {title}
         </h2>
