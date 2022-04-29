@@ -5,8 +5,8 @@ import useFetch from "use-http";
 // prefetch blog post data wrapper
 const withPost = (Component) => (props) => {
   const { slug } = useParams();
-  const dataUrl = `/posts/${slug}.json`;
-  const { data, error } = useFetch(decodeURI(dataUrl), [slug]);
+  const dataUrl = `/posts/${decodeURI(slug)}.json`;
+  const { data, error } = useFetch(dataUrl, [slug]);
   return error ? (
     // if error return to blog directory
     <Navigate to="/blog" replace />
